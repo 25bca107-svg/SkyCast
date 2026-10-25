@@ -1,0 +1,118 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkyCast | Weather Experience</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="background" id="background"></div>
+  <div class="overlay"></div>
+
+  <main class="container">
+    <header class="navbar">
+      <a class="logo" href="#">☾ Sky<span>Cast</span></a>
+      <div class="live"><i></i> LIVE WEATHER</div>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">YOUR WORLD, RIGHT NOW</p>
+      <h1>Feel the <span>forecast.</span></h1>
+      <p class="subtitle">Discover the mood of the sky, wherever you are.</p>
+
+      <form id="searchForm" class="search glass">
+        <span>⌕</span>
+        <input id="cityInput" placeholder="Search city or Indian state..." required>
+        <button id="searchBtn" type="submit">Explore ↗</button>
+      </form>
+      <p id="statusMessage" class="status"></p>
+    </section>
+
+    <section id="weatherResult" hidden>
+      <div class="dashboard">
+        <article class="glass current-card">
+          <div class="card-top">
+            <div>
+              <p class="label">CURRENT WEATHER</p>
+              <h2 id="cityName">Bengaluru</h2>
+              <p id="currentDate" class="muted"></p>
+            </div>
+            <span class="live-tag">● LIVE</span>
+          </div>
+
+          <div class="current-weather">
+            <div id="weatherIcon" class="weather-icon">☀️</div>
+            <div>
+              <div id="temperature" class="temperature">--°</div>
+              <p id="description" class="description">Loading...</p>
+            </div>
+          </div>
+
+          <div class="feels">
+            <span>FEELS LIKE</span>
+            <strong id="feelsLike">--°</strong>
+          </div>
+        </article>
+
+        <article class="glass details-card">
+          <p class="label">WEATHER DETAILS</p>
+          <h3>Atmosphere</h3>
+          <div class="metrics">
+            <div class="metric">
+              <span>💧</span><p>Humidity</p>
+              <strong id="humidity">--%</strong>
+            </div>
+            <div class="metric">
+              <span>🌬️</span><p>Wind speed</p>
+              <strong id="windSpeed">-- km/h</strong>
+            </div>
+            <div class="metric">
+              <span>🌧️</span><p>Rainfall</p>
+              <strong id="precipitation">-- mm</strong>
+            </div>
+            <div class="metric">
+              <span>☀️</span><p>UV index</p>
+              <strong id="uvIndex">--</strong>
+            </div>
+          </div>
+        </article>
+
+        <article class="glass forecast-card">
+          <div class="forecast-title">
+            <div>
+              <p class="label">THE DAYS AHEAD</p>
+              <h3>5-day forecast</h3>
+            </div>
+            <span class="muted">Your week, at a glance</span>
+          </div>
+          <div id="forecast" class="forecast-list"></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="welcomeCard" class="glass welcome">
+      <div class="welcome-icon">🌤️</div>
+      <p class="label">A WORLD OF WEATHER</p>
+      <h2>Every place has its own sky.</h2>
+      <p>Search a city or state to discover the current weather and the forecast ahead.</p>
+      <div class="quick-cities">
+        <button data-city="Bengaluru">Bengaluru ↗</button>
+        <button data-city="Mumbai">Mumbai ↗</button>
+        <button data-city="Chennai">Chennai ↗</button>
+        <button data-city="Delhi">Delhi ↗</button>
+      </div>
+    </section>
+
+    <footer>
+      <span>© <span id="year"></span> SkyCast</span>
+      <span>Weather data by Open-Meteo · Made for curious minds ✦</span>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
